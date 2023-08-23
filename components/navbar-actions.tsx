@@ -2,26 +2,18 @@
 
 import { ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import useCart from "@/hooks/use-cart";
+import useHasMounted from "@/hooks/use-has-mounted";
 
 const NavbarActions = () => {
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
+    const hasMounted = useHasMounted();
 
     const router = useRouter();
     const cart = useCart();
 
-    if (!isMounted) {
-        return null;
-    }
-
-    return (
+    hasMounted && (
         <div className="ml-auto flex items-center gap-x-4">
             <Button
                 onClick={() => router.push("/cart")}
