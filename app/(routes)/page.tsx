@@ -7,16 +7,13 @@ import ProductList from "@/components/product-list";
 const Main = async () => {
     const products = await getProducts({ isFeatured: true });
     const billboard = await getBillboard("64e34281ad438539f798fa58");
-    console.log(billboard, "billboard");
     return (
-        <Container>
-            <div className="space-y-10 pb-10" suppressHydrationWarning={true}>
-                <Billboard data={billboard} />
-                <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-                    <ProductList title="Featured Products" items={products} />
-                </div>
+        <div className="space-y-10 pb-10">
+            <Billboard data={billboard} />
+            <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+                <ProductList title="Featured Products" items={products} />
             </div>
-        </Container>
+        </div>
     );
 };
 

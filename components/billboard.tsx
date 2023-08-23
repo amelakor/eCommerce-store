@@ -17,7 +17,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
         return null;
     }
 
-    isMounted && (
+    return (
         <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
             <div
                 style={{ backgroundImage: `url(${data?.imageUrl})` }}
