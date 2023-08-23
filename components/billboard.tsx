@@ -9,6 +9,8 @@ interface BillboardProps {
 const Billboard: React.FC<BillboardProps> = ({ data }) => {
     const [isMounted, setIsMounted] = useState(false);
 
+    console.log(data, "billboard");
+
     useEffect(() => {
         setIsMounted(true);
     }, []);
