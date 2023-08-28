@@ -6,7 +6,6 @@ const getProduct = async (id: string): Promise<Product> => {
 
     const data = await res.json();
 
-    console.log(data, "data");
     return data;
 };
 
